@@ -1,0 +1,81 @@
+#+TITLE: Las cosas que me enamoran sobre Emacs 
+#+AUTHOR: Patricio Martínez Cano
+#+DATE: \today
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, oneside]
+#+LANGUAGE: es
+#+latex_header:\usepackage[spanish]{babel}
+#+latex_header:\textwidth=17cm
+#+latex_header:\oddsidemargin=0.5cm
+
+
+
+* Introducción
+Llevo ya casi 2 años usando Emacs y creo que estoy en condiciones de realizar una serie de artículos y vídeotutoriales sobre las bonanzas de este magnífico "Editor" y todo lo que se puede hacer con él, así como trucos e ideas que nos permitan ser mucho más productivos. 
+
+La idea ya me surgió hace tiempo y fue cuando recordé lo que me costó empezar a usar este editor por su inicial dificultad, dificultad que no es tal, como explicaré en futuros artículos, pero que por diversos motivos hicieron que me costase iniciarme en el manejo de éste. El asunto es que por esta mala fama sobre la dificultad de este editor y otros mitos que como ya explicaré son completamente falsos me alejaron de un programa que posteriormente al manejarlo me ha ocasionado bastantes buenos momentos además de que ha ayudado muchísimo a mejorar mi productividad y a hacer mucho más fácil mi trabajo diario. 
+
+Por todo lo dicho quiero acercar Emacs a los usuarios hispanos ya que tampoco encontré prácticamente documentación en español, y aunque esto no es fundamental, para los comienzos siempre ayuda, por lo que me parece interesante ayudar a que haya más documentación en español sobre este programa. 
+
+Además a diferencia de lo que se pueda pensar y tal como explicaré en futuros artículos Emacs no solo es para programadores aunque puede que en un principio sean éstos los que más beneficios le puedan sacar. Pero aún así Emacs es una maravilla de editor que puede ayudar mucho a escritores, blogeros, profesores, documentalistas y en general a cualquier persona que necesite una gran herramienta, la mejor, para producir texto. 
+
+Habría mucho más que explicar pero como esto solo es una introducción, lo dejaremos por hoy e iré directamente a explicar lo que adoro de Emacs aunque hay muchas más cosas como ya veremos en un futuro.
+
+* Cosas que me enamoran de Emacs 
+** Su gran velocidad y poca necesidad de recursos
+Es algo que aunque tengamos modernos ordenadores potentes siempre se agradece si como yo trabajamos con gran cantidad de herramientas a la vez. Emacs es mucho más que un editor de texto, de echo es más comparable con un IDE, y mucho más que ellos, pero aún con esas se ejecuta y consume poco más que un editor sencillo. He conocido personas que han tenido que actualizar el hardware de sus equipos solo por el IDE que usaban para programar. Esto no te ocurrirá con Emacs ya que incluso funciona muy bien en equipos más antiguos sin perder ninguna de sus características. 
+
+** Es mucho más que un editor de texto
+
+Bien, llevo diciendo esto casi todo el artículo, y aunque es algo que veréis si seguís los artículos y vídeos que subiré posteriormente, es hora de explicarlo un poco, al menos como introducción este asunto. Y es que Emacs tiene un sistema de paquetes, addons, complemento o quiera que lo llaméis  que se puede instalar en Emacs y que hace que este programa pueda realizar cosas desde tan sencillas, como colorear la sintaxis de prácticamente todos los lenguajes de programación, refactorización de código, identación correcta, autocompletado y autocorreción,o incluso llegar a ser un gestor de correo electrónico, un reproductor de música, un cliente de irc o de xmpp, un gestor de redes social, y un larguísimo etcétera que nos posibilita sus más de 3000 paquetes y en constante aumento que posee. 
+
+Mucha gente me ha preguntado siempre cosas como, para qué quiero que mi editor de texto o IDE, sea un gestor de correo o cliente de irc, bueno eso lo explicaré mejor en el próximo artículo sobre *productividad en Emacs*. 
+
+*** Su gestor de paquetes
+
+Si tuviéramos que instalar a mano los paquetes que posee Emacs sería tedioso y por ello posee el mejor gestor de paquetes que puede tener un Editor, comparable a los mejores gestores de paquetes de distribuciones GNU/Linux. Este gestor de paquete nos permite tener varios repositorios (o fuentes de paquetes), así como gestionarlos en su instalación desde internet, actualización, eliminación, etc. 
+
+*** Sus cientos de paquetes y modos
+
+Recalco que la gran cantidad de paquetes que posee Emacs le dan una potencia a este Editor no superada por ningún otro. Además de por tener una gran comunidad detrás hacen nuevos paquetes todos los días, con lo que los lenguajes soportados, las características que se añaden, etc hacen que siempre este editor esté a la última. 
+
+** Su productividad
+
+Esto merece un artículo aparte, el cual realizaré en breve, pero una de las grandes ventajas de Emacs es que realmente te hace más productivo. Esto mismo lo leí cuando empecé a ver mis primeros tutoriales de Emacs y realmente no me lo creía, al menos al principio era difícil de ver. Pero la verdad es que después de un tiempo he podido comprobar que era completamente cierto, aunque de momento no puedo explicarlo digamos, que espero dejar esto más claro en los futuros artículos y videotutoriales que realizaré al respecto. 
+
+** Sus combinaciones de teclas
+
+Si antes de este artículo has leído o te han comentado algo sobre Emacs supongo que habrás oído hablar de las horribles y muy complicadas combinaciones de teclas que tiene Emacs. Bueno, quitando que es otro de sus *Falsos Mitos*, ya que no siempre son obligatorios y además hay forma de mejorar la experiencia del teclado con Emacs, precisamente esa es una de sus ventajas y que aunque en Emacs se puede usar *menús* y ratón como con cualquier otro editor de texto, la opción de poder hacerlo todo con el teclado sin la necesidad de levantar las manos de él hace que éste sea muy *productivo* y cómodo a la hora real de trabajar. 
+
+** Que funciona igual tanto en modo texto como en modo gráfico
+
+Para muchas personas el *modo texto* o la *consola de texto* o como quiera que se le diga es algo del pasado y que no tiene cabida en la computación actual gracias a nuestros maravillosos entornos gráficos que hacen que todo sea más fácil. No es la idea de este artículo explicar lo equivocado que están, eso se verá en otro artículo, pero bueno asumamos que sabemos lo útil que es el modo texto o el manejo de la consola, pues otra de las ventajas de Emacs es que funciona perfectamente y con las mismas características en ambos ambientes, es más, incluso en modo texto puedes acceder a un menú parecido al del modo gráfico. Las ventajas de esto lo explicaré en un futuro. 
+
+** Org-mode
+
+*Org-mode* es un modo de Emacs. ¿Qué es un modo?, bien pues esto se explicará en futuros artículos pero digamos es la gran magia de la potencia de Emacs para asumir nuevas características que hagan que se comporte y ofrezca nuevas posibilidades las cuales no tiene de partida. Org-mode o el modo Org es un modo que necesitará muchos artículos para explicar todas sus características, pero resumiendo es un modo que hace Emacs perfecto para bloger, escritores y cualquier persona que quiera producir calidad de documentos en distintos formatos y mucho mejor que cualquier *procesador de texto*.  
+
+La potencia de Org-mode es tal que muchas personas se han pasado a Emacs solo por Org-mode y sus posibilidades son tantas que constantemente se está generando nuevos paquetes que todavía aumentan más éstas y hacen de él una herramienta poderosa y única. 
+
+** Magit
+
+Con *Magit* pasa un poco como con Org-mode aunque en menor escala. Es un modo de Emacs pero con el cual Emacs se transforma en una excelente aplicación para gestionar nuestros proyectos con Git. Este modo también se merece unos cuantos artículos para que podamos verlo con más profundidad. Por cierto, Git tampoco es solo para programadores y esto lo explicaré en otros artículos. 
+
+** Sus temas
+
+Emacs no solo es bueno y barato, de echo es gratuito, sino que también es bonito, y aunque cuando lo instalemos no nos pueda parece lo más bonito del mundo, podemos instalarle gran cantidad de temas que hagan aún más confortable y agradable a la vista nuestro día a día con Emacs 
+
+** Spacemacs
+
+*Spacemacs* es uno de mis últimos descubrimientos. Posee una activa comunidad y está en constante mejora. Y qué es *Spacemacs* bueno es un conjunto de modos, ideas, temas, etc, etc, que hace que Emacs luzca y se sienta completamente distinto a lo que podría ser en un principio y además de manera muy fácil. Spacemacs será tratado en un futuro porque es difícil de explicar resumidamente lo que es pero es algo que merece muchísimo la pena y hace aún más potente, atractivo y cómodo esta pieza de software única en su género.
+
+* Finalizando
+
+Bueno, terminando solo decir que visto lo visto a lo mejor se puede entender por qué algunos demoninan a Emacs más que un Editor de texto casi un Sistema Operativo completo, por sus gran cantidad de características y funcionalidades. 
+
+Como digo muchos puntos serán mejor entendidos cuando realice más artículos y videotutoriales acerca de Emacs y sus modos, características, trucos, ideas, etc, etc. Tal vez una vez vistos todos se termina  viendo con otros ojos a este gran programa o incluso como me pasó a mí que hasta me molestó no haberlo conocido antes. 
+
+
+
+
+

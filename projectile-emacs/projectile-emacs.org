@@ -1,0 +1,11 @@
+ 
+
+* Introducción
+
+* Instalación
+
+* Configuración
+
+* Uso
+
+crear ficheros .projectile para que sepa que estás en un proyecto

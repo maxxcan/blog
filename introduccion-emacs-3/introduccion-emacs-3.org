@@ -1,0 +1,36 @@
+#+TITLE:Introducción a Emacs (3ª parte)
+#+AUTHOR:Maxxcan
+#+LANGUAGE: es
+#+OPTIONS:   toc:1
+#+TOC: headlines 3
+
+
+* Introducción
+
+Seguimos con la última parte de nuestra introducción a Emacs con algunos pequeños apuntes de cosas que hacer.
+
+* Poniendo temas y cambiando los colores
+
+* Mirar documentación en inglés y español
+
+Hay mucha documentación de Emacs, tanto en la página de su proyecto como en su wiki. Ambos tienen versión en varios idiomas en los que por supuesto está el español. 
+
+Se pueden encontrar en:
+
++ [[https://www.gnu.org/software/emacs/][Página de Emacs ]]y su [[http://www.nongnu.org/emacs-man-es/#SEC_Top][manual]]
+
++ [[https://www.emacswiki.org/emacs/MapaDelSitio][En el wiki]]. 
+
+En el wiki además tenemos información hacia otras páginas, acceso al IRC de emacs en español y algunas páginas personales muy muy interesantes.
+
+
+* Mirar y/o probar la configuración de otras personas
+
+Otra forma en la que se aprende mucho, pero hay que tener ya algo de experiencia en el uso y la configuración de Emacs, es viendo la configuración de otras personas. 
+
+Por toda la red en páginas como *github* 
+
+* Visitar nuestro canal de IRC y nuestro Planet
+
+
+

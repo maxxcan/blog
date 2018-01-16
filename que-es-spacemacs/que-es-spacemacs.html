@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-10-17 mar 16:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>que-es-spacemacs</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Patricio Martínez" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">que-es-spacemacs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge89094f">1. Introducción</a></li>
+<li><a href="#org98d6e68">2. Qué es spacemacs</a>
+<ul>
+<li><a href="#orgf14ab1d">2.1. Layers</a></li>
+</ul>
+</li>
+<li><a href="#org87590ed">3. Cómo instalar spacemacs</a></li>
+<li><a href="#org0be9e4d">4. Configurar spacemacs</a></li>
+<li><a href="#orga790ca6">5. Mi experiencia con Spacemacs</a></li>
+<li><a href="#orgf7c71cc">6. Para saber más</a></li>
+<li><a href="#orga774e1e">7. En un futuro</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge89094f" class="outline-2">
+<h2 id="orge89094f"><span class="section-number-2">1</span> Introducción</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Mi idea era seguir haciendo artículos básicos sobre Emacs, pero viendo que ya hay muchos de ese tipo, en plan introductorios en el <a href="http://planet.emacs-es.org">Planeta Emacs en español</a> los  cuales están infinitamente mejor de lo que yo pudiera hacer he decidido dar un pequeño salto cuantitativo e ir comentando otras cosas de Emacs más concretas pero tal vez algo más avanzadas, tampoco mucho. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org98d6e68" class="outline-2">
+<h2 id="org98d6e68"><span class="section-number-2">2</span> Qué es spacemacs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Spacemacs empezó como una forma de hacer Emacs más accesible usando por un lado reglas mnemotécnicas para poder acordarse de las combinaciones de teclas y por otro lado hacer un uso extensivo del modo <i>evil-mode</i> que es un modo que nos permite usar atajos de teclado de Vim dentro de Emacs. También usa el paquete <i>witch-key</i> con el cual podemos ir viendo al mismo tiempo que vamos pulsando teclas cuales son las opciones que tenemos y qué hace cada nueva combinación de teclas. 
+</p>
+
+<p>
+Pero eso eran sus comienzos. A día de hoy el proyecto tiene en <a href="https://github.com/syl20bnr/spacemacs">Github</a> más de 13000 estrellas y cerca de 7400 commits. 
+Así pues el proyecto ya tiene peso propio con una gran comunidad que aporta y se comunica a través de <a href="https://gitter.im/login?action=signup&amp;source=embedded&amp;returnTo=/login/embed">Gitter</a> de manera muy activa siendo posiblemente la comunidad más activa dentro del mundo de Emacs. 
+</p>
+
+<p>
+Además Spacemacs se sigue preocupando por hacer llegar Emacs a cada vez más gente preocupándose tanto de darle un aspecto por defecto mucho más atractivo visualmente y moderno que cuando ejecutas Emacs sin configurar y agrega algunas ventajas que no tiene Emacs donde para mí la más importante es el uso de <b>Layers</b>. 
+</p>
+</div>
+
+<div id="outline-container-orgf14ab1d" class="outline-3">
+<h3 id="orgf14ab1d"><span class="section-number-3">2.1</span> Layers</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Los <b>Layers</b> son capas de configuraciones y paquetes. Esto se explica mejor con un ejemplo. Pongamos que quiero programar en <b>Common Lisp</b> algo muy acertado. Bueno pues configuro a Spacemacs para que añada este <i>Layer</i> (después veremos cómo). Una vez hecho esto Spacemacs nos instalará varios paquetes destinados para facilitar esta labor, paquetes que incluye coloreadores de sintaxis, completadores de código, auto acabado de paréntesis, así como el compilador correspondiente, puede que también refactorizadores, etc. 
+</p>
+
+<p>
+Y así con gran cantidad de lenguajes de programación por ejemplo. Además lo interesante es que aunque no lo tengamos previamente configurado para un lenguaje en concreto, en cuanto abramos un fichero con la extensión de un determinado lenguaje de programación Spacemacs nos instalará el <i>Layer</i> correspondiente a ese lenguaje de forma automática.  
+</p>
+
+<p>
+Pero como no solo de lenguajes de programación vive el Emaquero hay <i>Layer</i> para muchas otras cosas como por ejemplo:
+</p>
+
+<ol class="org-ol">
+<li>Para chatear
+<ol class="org-ol">
+<li>erc</li>
+<li>jabber</li>
+<li>slack</li>
+<li>rcirc</li>
+</ol></li>
+
+<li>Revisores 
+<ol class="org-ol">
+<li>De sintaxis</li>
+<li>Ortográfico</li>
+</ol></li>
+
+<li>Autocompletados 
+
+<ol class="org-ol">
+<li>E-mail</li>
+<li>Gnus</li>
+<li>mu4e</li>
+</ol></li>
+
+<li>Frameworks
+<ol class="org-ol">
+<li>django</li>
+<li>react</li>
+<li>ruby on rails</li>
+</ol></li>
+
+<li>Control de versión
+<ol class="org-ol">
+<li>git</li>
+<li>github</li>
+<li>preforce</li>
+</ol></li>
+
+<li>Herramientas 
+
+<ol class="org-ol">
+<li>ansible</li>
+<li>docker</li>
+<li>finanzas</li>
+<li>geolocalización</li>
+<li>nginx</li>
+<li>puppet</li>
+<li>systemd</li>
+<li>tmux</li>
+</ol></li>
+
+<li>Servicios Web
+<ol class="org-ol">
+<li>elfeed (lector de feeds)</li>
+<li>evernote</li>
+<li>spotify</li>
+<li>twitter</li>
+<li>wakatime</li>
+</ol></li>
+</ol>
+
+
+<p>
+Y muchos más <i>Layers</i>. Además cada cierto tiempo se agregan más y si no existe en su extensa documentación te explican como crearte tu propio layer con tus paquetes y tus configuraciones. Esto es algo que ayuda mucho a automatizar nuestra propia configuración.
+</p>
+
+<p>
+ePara saber todos los <i>Layers</i> que hay en Spacemacs podéis verlo <a href="http://spacemacs.org/layers/LAYERS.html">aquí</a>. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org87590ed" class="outline-2">
+<h2 id="org87590ed"><span class="section-number-2">3</span> Cómo instalar spacemacs</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Para instalar Spacemacs por supuesto hay que tener instalado <b>Emacs</b> y si ya lo tienes y no quieres perder la antigua configuración no olvides hacer una copia del directorio <b>.emacs/</b> ya que este se va a sobreescribir para instalar Spacemacs. También haz copia por seguridad de tu fichero <b>.emacs</b>. Todo esto lo podemos hacer con el siguiente comando:
+</p>
+
+<pre class="example">
+mv ~/.emacs.d ~/.emacs.d.back &amp;&amp; mv ~/.emacs ~/.emacs.bak
+
+</pre>
+
+<p>
+Ahora instalaremos Spacemacs con el siguiente comando:
+</p>
+
+<pre class="example">
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d 
+
+</pre>
+
+<p>
+Una vez iniciado Emacs después de esto, nos hará un par de preguntas sobre si queremos el modo <i>evil</i> (con los atajos y forma de trabajar de Vim) o la forma normal de Emacs. Además podemos instalar una versión completa con más Layers por defecto y una versión bootstrap con lo justo y necesario.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0be9e4d" class="outline-2">
+<h2 id="org0be9e4d"><span class="section-number-2">4</span> Configurar spacemacs</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Una vez iniciado Spacemacs no crea un fichero de configuración llamado <b>.spacemacs</b> que es muy largo y completo. 
+</p>
+
+<p>
+Lo interesante está al principio donde podemos indicar los distintos <i>Layers</i> que queramos usar. Además más abajo podemos indicar otros paquetes sueltos que podemos instalar. Esta parte es importante porque si queremos instalar un paquete en concreto no hay que usar el <i>list-packages</i> aunque por defecto aquí se usa <i>paradox-package</i> pero si instalamos algún paquete con alguna de estas formas pero luego no lo escribís en el fichero .spacemacs cuando reinicies Emacs se desinstalará el paquete.
+</p>
+
+<p>
+También hay una zona donde podemos indicar algunos paquetes que no queremos que se instalen. Esto por si algún <i>Layer</i> instala algún paquete que por alguna razón no queramos o nos dé problemas. 
+</p>
+
+<p>
+Más abajo hay unas secciones para las configuraciones personales de los distintos paquetes. Explicaré esto más detenidamente en el siguiente post.     
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga790ca6" class="outline-2">
+<h2 id="orga790ca6"><span class="section-number-2">5</span> Mi experiencia con Spacemacs</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Mi experiencia con Spacemacs en general ha sido grata y muy satisfactoria. Al principio me tuve que adaptarme un poco a la forma de trabajar de la forma como lo hace Spacemacs y su sistema de configuración y <i>Layers</i>. Si la verdad es que quieres tener un sistema 100% personalizado te aconsejo que sigas con Emacs, pero si no te importa adaptarte un poco al funcionamiento de Spacemacs éste tiene muchas ventajas. Además en general la forma de configurarlo es igual que en Emacs solo que en el fichero .spacemacs tendrás que poner esa configuración en lugares determinados. 
+</p>
+
+<p>
+La prueba clara de que Spacemacs se ha adaptado muy bien a mí o yo a él es que desde que empecé a usarlo no he vuelto a la configuración básica de Emacs. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf7c71cc" class="outline-2">
+<h2 id="orgf7c71cc"><span class="section-number-2">6</span> Para saber más</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+La mejor forma de para saber más acerca de Spacemacs es visitar su propia <a href="http://spacemacs.org/">página web</a>. Desde ahí podremos acceder a su <a href="https://github.com/syl20bnr/spacemacs">Github</a>, a su <a href="https://twitter.com/spacemacs">twitter</a>, ver los tutoriales o directamente conectarse al chat de Spacemacs en gitter. 
+</p>
+
+<p>
+Inclusive, puedes probarglo de manera online. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga774e1e" class="outline-2">
+<h2 id="orga774e1e"><span class="section-number-2">7</span> En un futuro</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+En un futuro haré mis tutoriales sobre Emacs enfocándome tanto en Emacs como a Spacemacs a la hora de la configuración y además estoy creando una serie de videotutoriales sobre Spacemacs en Youtube que iré anunciando por aquí. 
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2017-09-21 jue 00:00</p>
+<p class="author">Author: Patricio Martínez</p>
+<p class="date">Created: 2017-10-17 mar 16:47</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

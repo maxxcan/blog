@@ -1,0 +1,119 @@
+#+TITLE: que-es-spacemacs
+#+AUTHOR: Patricio Martínez
+#+EMAIL: maxxcan@argonauta
+#+DATE: <2017-09-21 jue>
+
+* Introducción
+
+Mi idea era seguir haciendo artículos básicos sobre Emacs, pero viendo que ya hay muchos de ese tipo, en plan introductorios en el [[http://planet.emacs-es.org][Planeta Emacs en español]] los  cuales están infinitamente mejor de lo que yo pudiera hacer he decidido dar un pequeño salto cuantitativo e ir comentando otras cosas de Emacs más concretas pero tal vez algo más avanzadas, tampoco mucho. 
+
+
+* Qué es spacemacs
+
+Spacemacs empezó como una forma de hacer Emacs más accesible usando por un lado reglas mnemotécnicas para poder acordarse de las combinaciones de teclas y por otro lado hacer un uso extensivo del modo /evil-mode/ que es un modo que nos permite usar atajos de teclado de Vim dentro de Emacs. También usa el paquete /witch-key/ con el cual podemos ir viendo al mismo tiempo que vamos pulsando teclas cuales son las opciones que tenemos y qué hace cada nueva combinación de teclas. 
+
+Pero eso eran sus comienzos. A día de hoy el proyecto tiene en [[https://github.com/syl20bnr/spacemacs][Github]] más de 13000 estrellas y cerca de 7400 commits. 
+Así pues el proyecto ya tiene peso propio con una gran comunidad que aporta y se comunica a través de [[https://gitter.im/login?action=signup&source=embedded&returnTo=/login/embed][Gitter]] de manera muy activa siendo posiblemente la comunidad más activa dentro del mundo de Emacs. 
+
+Además Spacemacs se sigue preocupando por hacer llegar Emacs a cada vez más gente preocupándose tanto de darle un aspecto por defecto mucho más atractivo visualmente y moderno que cuando ejecutas Emacs sin configurar y agrega algunas ventajas que no tiene Emacs donde para mí la más importante es el uso de *Layers*. 
+
+** Layers 
+
+Los *Layers* son capas de configuraciones y paquetes. Esto se explica mejor con un ejemplo. Pongamos que quiero programar en *Common Lisp* algo muy acertado. Bueno pues configuro a Spacemacs para que añada este /Layer/ (después veremos cómo). Una vez hecho esto Spacemacs nos instalará varios paquetes destinados para facilitar esta labor, paquetes que incluye coloreadores de sintaxis, completadores de código, auto acabado de paréntesis, así como el compilador correspondiente, puede que también refactorizadores, etc. 
+
+Y así con gran cantidad de lenguajes de programación por ejemplo. Además lo interesante es que aunque no lo tengamos previamente configurado para un lenguaje en concreto, en cuanto abramos un fichero con la extensión de un determinado lenguaje de programación Spacemacs nos instalará el /Layer/ correspondiente a ese lenguaje de forma automática.  
+
+Pero como no solo de lenguajes de programación vive el Emaquero hay /Layer/ para muchas otras cosas como por ejemplo:
+
+1. Para chatear
+   1. erc
+   2. jabber
+   3. slack
+   4. rcirc
+
+2. Revisores 
+   1. De sintaxis 
+   2. Ortográfico
+
+3. Autocompletados 
+
+   1. E-mail
+   2. Gnus
+   3. mu4e
+
+4. Frameworks
+   1. django
+   2. react
+   3. ruby on rails
+
+5. Control de versión
+   1. git
+   2. github 
+   3. preforce
+
+6. Herramientas 
+
+   1. ansible
+   2. docker 
+   3. finanzas 
+   4. geolocalización
+   5. nginx 
+   6. puppet 
+   7. systemd
+   8. tmux 
+
+7. Servicios Web
+   1. elfeed (lector de feeds)
+   2. evernote 
+   3. spotify 
+   4. twitter 
+   5. wakatime
+
+
+Y muchos más /Layers/. Además cada cierto tiempo se agregan más y si no existe en su extensa documentación te explican como crearte tu propio layer con tus paquetes y tus configuraciones. Esto es algo que ayuda mucho a automatizar nuestra propia configuración.
+
+ePara saber todos los /Layers/ que hay en Spacemacs podéis verlo [[http://spacemacs.org/layers/LAYERS.html][aquí]]. 
+
+* Cómo instalar spacemacs 
+
+Para instalar Spacemacs por supuesto hay que tener instalado *Emacs* y si ya lo tienes y no quieres perder la antigua configuración no olvides hacer una copia del directorio *.emacs/* ya que este se va a sobreescribir para instalar Spacemacs. También haz copia por seguridad de tu fichero *.emacs*. Todo esto lo podemos hacer con el siguiente comando:
+
+: mv ~/.emacs.d ~/.emacs.d.back && mv ~/.emacs ~/.emacs.bak
+
+Ahora instalaremos Spacemacs con el siguiente comando:
+
+: git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d 
+
+Una vez iniciado Emacs después de esto, nos hará un par de preguntas sobre si queremos el modo /evil/ (con los atajos y forma de trabajar de Vim) o la forma normal de Emacs. Además podemos instalar una versión completa con más Layers por defecto y una versión bootstrap con lo justo y necesario.
+
+* Configurar spacemacs
+
+Una vez iniciado Spacemacs no crea un fichero de configuración llamado *.spacemacs* que es muy largo y completo. 
+
+Lo interesante está al principio donde podemos indicar los distintos /Layers/ que queramos usar. Además más abajo podemos indicar otros paquetes sueltos que podemos instalar. Esta parte es importante porque si queremos instalar un paquete en concreto no hay que usar el /list-packages/ aunque por defecto aquí se usa /paradox-package/ pero si instalamos algún paquete con alguna de estas formas pero luego no lo escribís en el fichero .spacemacs cuando reinicies Emacs se desinstalará el paquete.
+
+También hay una zona donde podemos indicar algunos paquetes que no queremos que se instalen. Esto por si algún /Layer/ instala algún paquete que por alguna razón no queramos o nos dé problemas. 
+
+Más abajo hay unas secciones para las configuraciones personales de los distintos paquetes. Explicaré esto más detenidamente en el siguiente post.     
+
+
+
+* Mi experiencia con Spacemacs
+
+Mi experiencia con Spacemacs en general ha sido grata y muy satisfactoria. Al principio me tuve que adaptarme un poco a la forma de trabajar de la forma como lo hace Spacemacs y su sistema de configuración y /Layers/. Si la verdad es que quieres tener un sistema 100% personalizado te aconsejo que sigas con Emacs, pero si no te importa adaptarte un poco al funcionamiento de Spacemacs éste tiene muchas ventajas. Además en general la forma de configurarlo es igual que en Emacs solo que en el fichero .spacemacs tendrás que poner esa configuración en lugares determinados. 
+
+La prueba clara de que Spacemacs se ha adaptado muy bien a mí o yo a él es que desde que empecé a usarlo no he vuelto a la configuración básica de Emacs. 
+
+* Para saber más
+
+La mejor forma de para saber más acerca de Spacemacs es visitar su propia [[http://spacemacs.org/][página web]]. Desde ahí podremos acceder a su [[https://github.com/syl20bnr/spacemacs][Github]], a su [[https://twitter.com/spacemacs][twitter]], ver los tutoriales o directamente conectarse al chat de Spacemacs en gitter. 
+
+Inclusive, puedes probarglo de manera online. 
+
+
+* En un futuro 
+
+En un futuro haré mis tutoriales sobre Emacs enfocándome tanto en Emacs como a Spacemacs a la hora de la configuración y además estoy creando una serie de videotutoriales sobre Spacemacs en Youtube que iré anunciando por aquí. 
+
+
+

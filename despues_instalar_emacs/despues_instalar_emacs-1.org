@@ -1,0 +1,94 @@
+#+TITLE:Qué hacer después de instalar Emacs (1ª Parte)
+#+AUTHOR:Maxxcan
+#+LANGUAGE: es 
+#+OPTIONS: toc:nil
+
+
+
+* Introducción
+
+Si acabamos de instalar Emacs por primera vez y hemos visto los artículos anteriores aquí y aquí, podremos ver que Emacs resulta algo feote y que además a pesar de que he dicho en muchas ocasiones que Emacs es mucho más que un editor pues por lo general vemos que es un editor con alguna opción rara por ahí y poco más. 
+
+%imagen%
+
+Veremos qué hacer para dejarlo un poco más bonito y con muchas más funcionalidades.
+
+* Cosas que hacer después de instalar Emacs
+
+** Aprender Inglés
+
+Bueno esto parece una tontería pero aún me encuentro gente que no tiene ni idea de inglés por ahí y en general eso no es bueno si te gusta la informática. Tampoco hay que ser un experto ya que con saber cierto vocabulario básico es suficiente. En este caso lo digo porque Emacs no está traducido y por lo que yo sé parece que de momento no es la idea de hacerlo, aunque puede que me equivoque y ya haya alguna iniciativa por ahí. 
+** Deshabilitar la pantalla de bienvenida
+
+La pantalla de inicio suele ser algo petarda. Sobre todo porque te muestra combinaciones de teclas para la ayuda y como acceder a tutoriales que como ya he dicho están la mayoría en inglés. Así que excepto la primera o segunda vez que uno inicia Emacs, la mayor parte de las veces es una pantalla de bienvenida que poco nos interesa. 
+
+Para quitarla se hace de la siguiente manera:
+
++ Desde el menú seguimos la siguiente ruta: Options --> Customize Emacs
++ Buscamos la opción 
++ Ponemos el cursor encima y presionamos /Enter/ o clickamos en /Toggle/ y veremos que se cambia a /off/
++ Clickamos o vamos con el cursor a /Save and Apply/
+
+Nos preguntará si queremos guardar y/o crear el fichero *.emacs* y le diremos. En ese fichero estará la configuración de nuestro programa así que todo lo que haremos después será editando ese fichero.
+
+** Ver los paquetes de los que disponemos
+
+Emacs tiene un montón de addons, complementos o paquetes, como quieras llamarlos. Y también tiene un gestor de paquetes para que puedas ver los que hay, instalarlos, borrarlos, actualizarlos, etc. 
+
+La gran cantidad de addons o paquetes que tiene Emacs es parte de su magia. Tiene muchísimos, además se añaden cada día y se actualizan o mejoran los que ya hay. Esto hace de Emacs el editor más versátil, variado y potente de todos ya que casi cualquier cosa que uno se imagina que necesite o no en un editor ya alguien lo ha pensado y ha creado un paquete para ello.
+
+Para acceder a los paquetes que tenemos lo hacemos de la siguiente manera:
+
++ Desde el menú seguimos la siguiente ruta: Options --> Manage Emacs Package
++ O también presionamos *Alt+x* y escribimos en el minibuffer: list-packages
+
+Podemos echar un vistazo a los paquetes que de por sí ya disponemos. La mayoría ya estarán instalados y eso es fácil de ver porque al lado del paquete pone: *installaded* y además estos paquetes aparecen con un color más oscuro. 
+
+Para que veamos los que podemos instalar, éstos estarán en un color más claro o blanco y además pondrá *avalible*. Podemos poner el cursor sobre el paquete, darle a /Intro/ y nos mostrará una nueva ventana con información del paquete, autor, versión, etc, y puede que un enlace a la web del autor donde explique más detalladamente cómo funciona su paquete. 
+
+Además para instalar un paquete lo que tenemos que haces es poner el cursor en la línea donde esté el paquete y presionar la tecla *i*, esto hará que aparezca una *i mayúscula* al principio de la línea, podemos hacer lo mismo con varios paquetes a la vez, si nos hemos equivocado o cambiamos de opinión, pondremos el cursor sobre el paquete y podemos pulsar la tecla *u* y entonces la I mayúscula desaparecerá. Una vez seleccionados los paquetes que querramos pulsamos la tecla *x* y nos pedirá confirmación para instalar los paquetes seleccionados. 
+
+Para actualizar los paquetes instalados presionamos la tecla *U mayúscula*. Entonces se marcarán los paquetes que se pueden actualizar, pulsamos nuevamente *x* y entonces podremos actualizar los paquetes. 
+
+Para salir del gestor de paquetes se hace pulsando la tecla *q*  
+
+** Añadir más repositorios
+
+La cantidad de paquetes que trae de serie /Emacs/ son muchísimos y muy variados. Pero si aún así pensamos que no son los suficientes o simplemente queremos ver que se cuece por otros lares, podemos añadir nuevos repositorios. 
+
+Un repositorio es una dirección en Internet donde podemos acceder a nuevos paquetes. Para Emacs hay a parte del oficial dos más y veremos que podemos hacer para añadirlos a nuestra lista de paquetes. 
+
+Seguiremos los siguientes pasos:
+
++ Abrimos el fichero .emacs
++ En el escribimos lo siguiente: 
+
+#+begin_src emacs-lisp :tangle yes
+
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+
+#+end_src
+
++ O también los podemos añadir uno a uno:
+  
+#+begin_src emacs-lisp :tangle yes
+
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org-mode's repository
+
+
+#+end_src
+
+Una vez hecho salvamos el fichero con *Ctrl+x + Ctrl+y* y pulsamos *Alt+x* y escribimos *eval-buffer*. Con eso no hará falta que reiniciemos el programa. 
+
+Ahora si volvemos a nuestros gestor de paquetes veremos que hay muchos más.
+
+** Añadiendo org mode
+
+Org es una herramienta fundamental y muy útil que vale para gran cantidad de cosas. Son tantas sus utilidades que hay muchas personas que han aprendido a usar Emacs sólo por *Org*. 
+
+Como voy a dedicar varios artículos a explicar *Org* no voy a decir más aquí y lo dejaremos para más adelante.
+

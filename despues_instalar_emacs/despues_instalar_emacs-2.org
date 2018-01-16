@@ -1,0 +1,201 @@
+#+TITLE: Qué hacer después de instalar Emacs (2ª Parte)
+#+AUTHOR: Maxxcan
+#+LANGUAGE: es
+#+OPTIONS: toc:nil
+
+
+* Algunos paquetes interesantes
+
+** Ido mode
+
+*Ido Mode* extiende comandos como /find-file/ y /switch-to-buffer/ que como os podeís imaginar sirve para
+*abrir un fichero* o *cambiar de buffer*. Lo que hacer es que cuando ejecutamos cualquiera de esos comandos con
+por ejemplo *Ctrl+x+Ctrl+f* o *Ctrl+x+b* nos aparece de forma visual las opciones que tenemos.
+En este [[https://asciinema.org/a/27740][enlace]] podemos ver en un vídeo cómo actúa.  
+
+Además de lo dicho se puede extender con *otras extensiones* que le dan *nuevas caractéristicas* y además
+se puede usar en otros lugares además de los dichos.
+
+No hace falta instalarlo ya que *viene por defecto*, sólo hay que *activarlo* escribiremos lo siguiente en nuestro fichero de configuración:
+
+#+begin_src elisp
+(require 'ido)
+(ido-mode)
+(ido-everywhere)
+#+end_src 
+
+Para más información os recomiendo [[http://defn.io/posts/2015-10-12-ido-mode.html][este artículo]]  
+
+** Undo tree
+
+*Undo tree* o árbol de deshacer, es para mí la *forma más bonita y práctica* de poder *hacer y deshacer* en /Emacs/. 
+Es bonito y es práctico. Como os imagináis nos muestra un *árbol* donde podemos ver con ramas y todo nuestro *historial 
+de acciones* y podemos movernos en el tiempo hacia delante y hacia atrás para *hacerlas o deshacerlas* y además nos 
+permite *cambiar de rama*. 
+
+Yo creo que con esta imágen que ya muy claro. 
+
+% imagen %
+
+Para *instalarlo* vamos a nuestro *gestor de paquetes* y buscamos el paquete *undo-tree*. 
+
+Una vez instalado, para *activarlo*, agregamos a nuestro fichero de configuración lo siguiente:
+
+#+begin_src elisp
+
+(global-undo-tree-mode)
+
+#+end_src
+
+
+Para más información en inglés tenéis este [[https://www.emacswiki.org/emacs/UndoTree][enlace]]
+
+** Wich key
+
+*Which key* nos permite *mostrarnos* cuales son las *combinaciones de teclas* de cada acción o comando en /Emacs/. Es realmente
+práctico ya que nos ayuda a realizar los comandos con las combinaciones de teclas y además a recordarlas.
+
+Para *instalarlo*, en el *gestor de paquetes* buscaremos el paquete llamado *which-key*.  
+
+Una vez instalado lo *activamos* escribiendo en el fichero de configuración: 
+
+#+begin_src elisp
+
+(require 'which-key)
+(which-key-mode)
+
+(setq which-key-popup-type 'minibuffer)
+
+#+end_src
+
+Todo lo referente a este paquete lo podemos encontrar en este [[https://github.com/justbur/emacs-which-key][enlace]] aunque ya le dedicaremos un o dos artículos al igual
+que el resto de paquetes que estamos comentado. 
+
+** Flycheck
+
+*Flycheck* es un paquete o complemento que te *chequea el estilo y la sintaxis* de muchos lenguajes de programación. No están
+todos pero hay muchísimos, de hecho hay [[http://www.flycheck.org/en/latest/languages.html][más de 40]] lenguajes. 
+
+Para *instalar* este paquete podemos usar nuestro *gestor de paquetes* habitual, buscar el paquete *flycheck* y añadir al fichero de configuración: 
+
+#+begin_src elisp
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+#+end_src  
+
+Una vez instalado podemos instalar *dos programas* que son para el chequeo sintáctico de *python y javascript*: 
+
+Para ello: 
+
+#+begin_src shell
+pip install pylint
+npm install eslint
+#+end_src
+
+Posterior a eso he hecho la prueba con un archivo que imprime "hola" en python y con esto me he encontrado:
+
+%imagen%
+
+Aquí vemos en la imagen que la línea está precedida por una señal roja y abajo nos indica de que tenemos que poner paréntesis.
+
+Si lo hacemos:
+
+
+%imagen%
+
+Pues la marca roja cambia a verde aunque aún así me sigue dando algunos consejos. 
+
+Sin necesidad de instalar nada también me da consejos para mi fichero de configuración de Emacs. 
+
+%imagen% 
+
+Podréis encontrar más información en este [[http://www.flycheck.org/en/latest/languages.html#flycheck-languages][enlace.]]
+
+Además de *flycheck* en Emacs también hay otro paquete llamado *flymaker* que también corrige nuestra sintaxis. El tema de estos
+programas es algo complejo por lo que lo dejaremos para un *artículo completo* donde comentaremos más sobre estos programas
+y la diferencia entre ambos.  
+
+** Auto-complete
+
+Sí, *auto-complete* hace lo que promete y es *autocompletar* el texto que estamos escribiendo. Sirve tanto para cuando estás escribiendo
+un programa con un lenguaje de programación o un documento cualesquiera. 
+
+Para *instalarlo* lo hacemos con nuestro *gestor de paquetes* y buscamos el paquete *auto-complete*. Además de este podemos instalar algunos que 
+comienzan con *ac-* y van seguidos de un lenguaje de programación u otra cosa y agrega más autocompletado al programa. Existe alguna excepción
+como el paquete *org-ac* y alguno otro más.  
+
+Una vez instalado lo *activamos* escribiendo en el fichero de configuración:
+
+#+begin_src elisp
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+#+end_src 
+
+A partir de aquí observaremos esto: 
+
+%imagen%
+
+
+Este paquete y otro parecido son muy interesantes por lo que los veremos en *profundidad en un artículo exclusivo*
+para ellos.
+
+** Yasnippets
+
+*Yasnippets* viene del acrónimo *"Yet Another Snippet Extension"* y lo que nos facilita es un montón de
+*Snippets o trozos de código*. A estos trozos de código podemos acceder bien escribiendo un conjunto
+de texto, una palabra o frase y expandiendola con una tecla, por defecto TAB, o bien accediendo
+al menú. Por supuesto es más rápido con la tecla. 
+
+Para *instalarlo* buscar el paquete llamado *Yasnippet* e instalarlo con el *gestor de paquetes* de Emacs 
+y agregamos a nuestro *fichero de configuración* lo siguiente:
+
+#+begin_src emacs-lisp :tangle yes
+(require 'yasnippet)
+(yas-global-mode 1)
+#+end_src  
+
+Y ya veremos que en el menú de arriba ya aparece el menú de *Yasnippet* y podremos ver los código que nos ofrece. 
+
+Este paquete también es muy interesante y ya le daremos un artículo profundizando más en él en un futuro.
+
+De momento si quieres tener más información puedes visitar este [[http://joaotavora.github.io/yasnippet/][enlace]]
+
+** Algunos añadidos para lenguajes
+
+En /Emacs/ además de lo visto existen infinidad de paquetes que nos *ayudan a programar* en los
+distintos lenguajes de programación. Yo creo casi no hay lenguaje que no tenga un /modo/ para
+/Emacs/. 
+
+Los paquetes van desde ayudas para la *sintaxis, comprobadores de estilos, identadores automáticos,
+generadores de código, refactorizadores* y un largo etcétera. 
+
+Sería muy largo explicar todo eso aquí así que os prometo que en un futuro haré artículos viendo
+esos paquetes para los lenguajes más famosos y para otros no tan famosos. 
+
+** Otros paquetes que pueden ser interesantes
+
+Hay muchísimo paquetes para Emacs con distintas *funcionalidades*. Algunos de ellos
+pueden ser:
+
+1. *olivetti*. Que nos centra el texto según un tamaño que le indiquemos.
+2. *helm*. Un gran paquete que veremos en un futuro pero que os recomiendo este [[https://daemons.cf/posts/introduccin-a-helm/][artículo]].
+3. *org-pomodoro*. Ya hablaremos de org pero con este paquete además podemos añadirle la *técnica pomodoro*. 
+4. *nyan-mode*. Que nos muestra a este *famoso gato* en nuestra barra de abajo
+5. *nlim y minimap*. Para añadir los números de línea a la izquierda y un *minimapa* de nuestro fichero donde querramos.
+6. y muchos más que ya veremos
+
+* Punto y aparte
+
+Ya hemos visto gran cantidad de cosas que podemos hacer con Emacs una vez instalado. Algunas
+son más importantes que otras y para algunas personas seguro que su listado de cosas que hacer
+es distinto. 
+
+Como ya he recalcado en más de una ocasión cada uno de los paquetes comentados tendrán su propio o propios
+artículos ya que algunos son altamente interesantes, además veremos muchos más paquetes y ya dejaré en manos
+del lector si creen que son fundamentales para ellos o no. 
+
+Aún queda una tercera parte en la que contaremos algunas cosillas que pueden estar bien hacer pero desde un punto
+de vista más bien estético.  
+

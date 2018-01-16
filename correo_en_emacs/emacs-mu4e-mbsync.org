@@ -1,0 +1,163 @@
+#+TITLE: Configurar el correo en Emacs con Mu4e y Mybsync
+#+AUTHOR: Maxxcan
+#+DATE:\today
+
+* Introducción
+
+Para poder ver el correo en nuestro maravilloso Emacs tenemos varias posibilidades de clientes de correo para Emacs. Nosotros en concreto veremos la conjunción *Mu4e* más *Mbsync*. 
+
+* Instalando lo que necesitamos
+
+Para llevar a cabo esto lo mejor es que utilicemos el gestor de paquetes del propio Emacs, cosa que podemos hacer tecleando en el minibuffer -list-packages- y buscamos el paquete *Mu4e* y el paquete *smtpmail*, éste último para poder enviar correo. 
+
+Una vez hecho esto tenemos que instalar en nuestro ordenador el programa *Mbsync*, el cual podemos descargar de su web en la siguiente dirección [[http://isync.sourceforge.net/][siguiente]]. 
+
+Si tienes Archlinux el paquete que necesitas se instala con el siguiente comando: /pacma -S isync/ y en debian lo haremos con el comando /apt-get install isync/. 
+
+También hay que instalar mu 
+
+* Configurando  
+
+A partir de ahora voy a poner como ejemplo una cuenta de gmail. Para otro tipo de cuentas es más o menos lo mismo.
+
+** Configurando mbsync
+
+Lo primero que vamos a hacer es configurar el programa mbsync que es el que hace que se descargue y sincronice nuestro cliente de correo con nuestro servidor de correo. 
+
+Para ello creamos el fichero *.mbsyncrc* y para eso lo mejor es ir al wiki de Archlinux donde explica cómo hacerlo, en concreto en esta [[https://wiki.archlinux.org/index.php/Isync][página]]. Pero resumiendo el código a poner en ese archivo es:
+
+#+BEGIN_SRC bash
+
+IMAPAccount gmail
+# Address to connect to
+Host imap.gmail.com
+User tucorreo@mail.com
+Pass tupassword
+# To store the password in an encrypted file use PassCmd instead of Pass
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+#
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# The trailing "/" is important
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
+
+#+END_SRC
+
+
+Una vez creado el fichero *.mbysncrc* creamos la carpeta *.mail/gmail* en nuestro directorio personal con el comando:  /mkdir -p ~/.mail/gmail y ejecutamos: 
+
+: mbsync -a 
+
+En la wiki de Archlinux explican aún más cosas interesantes pero con lo puesto ya funciona.
+
+* Sincronizando con mu4e
+
+Hay que instalar el programa mu o en el caso de Archlinux mu-git con el comando adecuado. 
+
+Luego hay que indexar:
+
+: mu index --maildir=~/.mail/gmail
+
+
+
+
+
+
+** Configurando Emacs
+
+
+Ahora en el fichero principal de configuración de _Emacs_ vamos a escribir lo siguiente:
+
+#+BEGIN_SRC emacs-lisp
+
+(require 'smtpmail)
+
+
+; smtp
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials
+      '(("imap.gmail.com" 587 nil nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      smtpmail-debug-info t)
+
+(require 'mu4e)
+
+(setq mu4e-maildir (expand-file-name "~/.mail/gmail"))
+
+(setq mu4e-drafts-folder "/Drafts")
+(setq mu4e-sent-folder   "/Sent Items")
+(setq mu4e-trash-folder  "/Trash")
+(setq message-signature-file "~/.emacs.d/.signature") ; put your signature in this file
+
+; get mail
+(setq mu4e-get-mail-command "mbsync -a"
+      mu4e-html2text-command "w3m -T text/html"
+      mu4e-update-interval 120
+      mu4e-headers-auto-update t
+      mu4e-compose-signature-auto-include nil)
+
+(setq mu4e-maildir-shortcuts
+      '( ("/INBOX"               . ?i)
+         ("/Sent Items"   . ?s)
+         ("/Trash"       . ?t)
+         ("/Drafts"    . ?d)))
+
+;; show images
+(setq mu4e-show-images t)
+
+;; use imagemagick, if available
+(when (fboundp 'imagemagick-register-types)
+  (imagemagick-register-types))
+
+;; general emacs mail settings; used when composing e-mail
+;; the non-mu4e-* stuff is inherited from emacs/message-mode
+(setq mu4e-reply-to-address "tucorreo@mail.com"
+    user-mail-address "tucorreo@mail.com"
+    user-full-name  "Tu nombre o lo que quieras")
+
+;; don't save message to Sent Messages, IMAP takes care of this
+; (setq mu4e-sent-messages-behavior 'delete)
+
+;; spell check
+(add-hook 'mu4e-compose-mode-hook
+        (defun my-do-compose-stuff ()
+           "My settings for message composition."
+           (set-fill-column 72)
+           (flyspell-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+#+END_SRC
+
+
+Como puedes observar en la configuración habilitamos la opción de que muestre imágenes en el modo gráfico y que además habilite por defecto la autocorreción. Por cierto, es conveniente tener instalado si no es así el paque
+* El uso de mu4e 

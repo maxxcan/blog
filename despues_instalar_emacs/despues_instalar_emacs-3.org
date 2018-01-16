@@ -1,0 +1,8 @@
+
+
+
+* Instalar configuraciones de terceros
+
+** Instalando el Started Emacs Kit
+
+** Instalando Spacemacs

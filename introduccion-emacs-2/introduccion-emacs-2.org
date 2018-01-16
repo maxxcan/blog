@@ -1,0 +1,144 @@
+#+TITLE:Introducción a Emacs (2ª parte)
+#+AUTHOR:Maxxcan
+#+LANGUAGE: es
+#+OPTIONS:   toc:1
+#+TOC: headlines 3
+
+
+
+* Introducción
+
+Seguimos tras la primera parte para intentar acercar /Emacs/ a todos los usuarios posibles. Como ya dejamos claro al principio /Emacs/ es algo complicado al principio ya que es algo distinto a los editores actuales, pero una vez que uno se acostumbra las cosas cambian mucho. Además al final de esta entrada explicaré un pequeño truco para poder poner la combinación de teclas que queramos.
+
+* Más combinaciones de teclas
+
+** Resumen de la entrada anterior
+
+Vamos a repasar las combinaciones de teclas más importantes de la *entrada anterior*:
+
+1. *(Ctrl+x) + (Ctrl+f)* --> *Abrir* un archivo o *crearlo* si éste no existe previamente.
+2. *(Ctrl+x) + (Ctrl+s)* --> Salvar el buffer al archivo o *guardar*, como ustedes quieran.
+3. *(Ctrl+x) + (Ctrl+w)* --> Salvar el buffer con otro nombre de archivo o *guardar como* como gusten.
+4. *(Ctrl+x) + k* --> Para *cerrar* o matar (kill) el *buffer* actual. 
+5. *(Ctrl+x) + (Ctrl+c)* --> *Cerrar Emacs*
+
+** Navegando por el documento
+
+Emacs también tiene combinaciones de teclas para mover nuestro cursor por el documento. Esto es así porque como vimos con la entrada anterior los teclados antiguos no tenían teclas tan básicas ahora como *Avanzar Página*, *Retroceder Página* o los *cursores*. Así que para mover el cursor hacia delante o detrás o avanzar párrafos hay combinaciones de teclas pero no las voy a decir ya que con los cursores vamos bien, eso lo dejaremos para otra  
+
+1. *Ctrl+a* --> Lleva el cursor al *inicio de la línea* en la que se encuentre.
+2. *Ctrl+e* --> Lleva el cursor al *final de la línea* en la que se encuentre.
+3. *Alt+<* --> Lleva el cursor al *inicio del buffer*.
+4. *Alt+>* --> Lleva el cursor al *final del buffer*.
+5. *(Alt+g)+g* --> Ir a la *línea del documento* indicada.
+6. *(Ctrl+x)+h --> *Seleccionar todo*
+
+
+** Borrando cosas en el documento
+
+1. *Alt+d* --> *Borra una palabra* a partir de donde se encuentre el cursor. 
+2. *Ctrl+k* --> *Borra la línea* a partir de donde se encuentre el cursor.
+
+** Trabajando con buffers
+
+1. *(Ctrl+x) + k* --> *Cierra el buffer* en el que estamos
+2. *(Ctrl+x) + b* --> Cambiar al buffer que escribamos en el mini-buffer, si directamente le damos a *Enter* iremos al buffer *anterior*.
+3. *(Ctrl+x) + (Ctrl+b)* --> Nos muestra en otra ventana una lista con los buffers que hay abiertos. Se sale de ahí con *q*
+
+** Cortando y pegando
+
+1. *Ctrl+SPC* --> Selección de texto. La selección del texto en Emacs es distinta a otros editores pero realmente es más cómoda. Inicialmente pulsamos Ctrl+SPC entonces moveremos el cursor y por donde vaya el cursor se irá seleccionando. Tal como vemos abajo, para cancelar la selección se hace con ....  Una vez que tenemos nuestra selección pulsaremos la combinación de teclas para *Cortar* o *Copiar*
+
+2. *Ctrl+w* --> Cortar
+3. *Alt+w* --> Copiar
+4. *Ctrl+y* --> Pegar (la y viene de yank en inglés)
+
+Para que el Cortar/Copiar/Pegar sea como en otros editores podemos usar el /cua-mode/ que ya veremos más adelante.
+
+Si nos equivocamos podemos *Deshacer* lo que hayamos hecho con *Ctrl+/* o *Ctrl+_*
+  También hay un truco para cambiar el *Deshacer* por *Ctrl+z* más común en otros editores pero que veremos al final de esta entrada.
+
+** Buscando y reemplazando
+
+1. *Ctrl+s* --> Búsqueda hacia abajo. Pulsamos esa combinación, introducimos la palabra a buscar y vamos pulsando de nuevo la combinación, lo que nos llevará hacia abajo del documento. Si pulsamos *Ctrl+g* saldremos de la búsqueda.
+2. *Ctrl+r* --> Lo mismo pero recorreremos el documento hacia arriba con respecto a la posición de nuestro cursor.
+3. *Alt+%* --> Pulsamos y nos pregunta la palabra a buscar y con qué reemplazarla y hará una búsqueda y reemplazo hacia abajo del documento respecto a la posición de nuestro cursor.
+4. *Alt+Ctrl+%* --> Igual que le anterior pero solo que la búsqueda y reemplazo se hará hacia arriba del documento con respecto a la posición de nuestro cursor.
+
+** Deshacer y Rehacer
+
+La *combinación de teclas* es la siguiente:
+
+1. *Deshacer* --> *Ctrl+/* o *Ctrl+_*
+2. *Rehacer* --> *Ctrl+?* o *Alt+_*-
+
+* Chuleta con el resumen de las teclas de /Emacs/
+Aquí os dejo una pequeña chuleta o resumen de las teclas más importantes que hemos visto.
+
+* Como aprender las combinaciones de teclas de /Emacs/
+
+Pues como ya he dicho no es necesario aprenderse todas las combinaciones de teclas de golpe, eso es algo tedioso y aburrido. Lo mejor es ir usando el programa e ir usando las combinaciones poco a poco hasta que las vayamos interiorizando y después ya no podremos sacarlas de nosotros. Seremos uno con el teclado y el teclado uno con nosotros y será completamente automático. 
+
+Los pasos a seguir podrían ser:
+
+1. Usar en un principio los iconos y el menú de la aplicación. Lo bueno de esto es que en el menú por ejemplo, al lado del comando te indica la combinación de teclas que podrás ir aprendiendo poco a poco o consultarlo para cuando se te olvida alguna. 
+2. Una vez podemos ir soltando el ratón y con la tecla *F10* activaremos el menú y con los cursores podremos ir al comando que necesitemos.
+3. Ir viendo poco a poco la ayuda y los manuales para terminar de ir aprendiendo las combinaciones de teclas que necesitamos
+
+Os diré por experiencia propia que simplemente con los dos primeros puntos me ha sido suficiente para ir aprendiendo todas las combinaciones de teclas que sé y de una forma muy automática.
+
+Aquí además os dejo una chuleta que ha realizado mi admirada y gran usuaria de Emacs [[http://sachachua.com/blog/][Sacha Chua]]. 
+
+%imagen%
+
+Tiene muchos más [[http://sachachua.com/blog/sketched-books/][aquí]] y os recomiendo que le echéis un ojo porque son todos geniales.
+
+ 
+* Los modos, la aparición de las nuevas combinaciones de teclas y algunas reglas mnemotécnicamente
+
+Aunque de esto ya hablaremos más detalladamente a /Emacs/ se le pueden instalar los llamados *Modos*. Los *Modos* en resumen son unos paquetes que les da una serie de *características* al programa que no tiene en origen. Hay modos para *leer el correo*, conectarse a una red mediante XMPP y los más utilizados modos para la *sintaxis* de un determinado lenguaje, coloreado, auto-completado, etc, etc. 
+
+Como hemos visto para la mayoría de las funciones que hemos visto que son generales a Emacs se comienza con la combinación *Ctrl-x* o incluso *Alt-x*. La *X* viene de la palabra en inglés *execute* y significa eso, que ejecuta algo. 
+
+En cambio, con los modos aparecen *combinaciones de teclas* que empiezan en cambio con *Ctrl+c*. Esto no es siempre así pero ocurre mayoritariamente y aunque no es un dogma no ayuda mnemotécnicamente a diferenciar los comandos más generales de /Emacs/ y los comandos concretos de los distintos *Modos*. Por ejemplo, también podemos observar que todos las combinaciones de teclas de comandos de *ayuda* comienzan con *Ctrl+h* del inglés *Help*.
+
+Veremos más adelante más de estas *reglas mnemotécnicas*. 
+
+
+* Como cambiar las combinaciones de teclas
+
+Y bueno, para finalizar diré que es interesante saber que aunque lo útil es saber las combinaciones de teclas que trae emacs por defecto, que sepamos que siempre podemos cambiarlas y poner las nuestras propias. 
+
+Todo esto se hace en el fichero de configuración de /Emacs/ que es el *.emacs*, que según que el sistema sea *Windows, Linux o Mac* estará en un lugar distinto. Pues en ese fichero podemos añadir la configuración para cambiar las combinaciones de teclas, o en el caso concreto de *Cortar/Copiar/Pegar/* cambiarlo a las teclas *Ctrl+c*, *Ctrl+x* y *Ctrl+v* con el *cua-mode* que como podéis observar es un modo de /Emacs/ que añade nuevas combinaciones de teclas.
+
+Para agregar el *cua-mode* hay que instalarlo con el gestor de paquetes de /Emacs/ y luego en el fichero de configuración *.emacs* añadir la línea:
+
+#+begin_src elisp
+
+(require 'cua-mode)
+
+#+end_src 
+
+Hablaremos más del *gestor de paquetes* de /Emacs/ en un futuro artículo.
+
+También podemos añadir nuestra propia combinación de teclas. Por ejemplo vamos a mejorar como ejemplo la experiencia de Deshacer/Rehacer al estilo Windows$. 
+
+Como ya hemos visto para *Deshacer* y *Rehacer* las teclas en /Emacs/ son *Ctrl+/* ó *Ctrl+_* para deshacer y *Ctrl+?* o *Alt+_* para rehacer.
+
+Así que vamos a reconfigurarlas para que esto mismo se haga con la combinación de teclas *Ctrl+z* y *Ctrl+y* al igual que en Windows$.  
+
+Para ello añadiremos en nuestro fichero de configuración las siguientes líneas:
+
+#+begin_src elisp
+
+(global-set-key (kbd "C-z") 'undo)   
+
+(global-set-key (kbd "C-y") 'redo)
+
+#+end_src
+
+En un *futuro artículo* hablaremos más en profundidad del modo *undo-tree-mode*, que es un modo muy interesante y visual que mejora muchísimo nuestra experiencia en el *Deshacer/Rehacer*.  
+
+ 
+
+

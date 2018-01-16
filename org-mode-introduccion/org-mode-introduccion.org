@@ -1,0 +1,119 @@
+#+TITLE:Introducción a Org-mode
+#+AUTHOR: Maxxcan
+#+LANGUAGE: es
+#+OPTIONS:   toc:nil
+
+
+
+* Introducción
+** Qué es org-mode
+Es difícil explicar qué es el *Modo Org* o como diremos a partir de ahora *org-mode* para simplificar. Como vemos es un modo que como tal añade nuevas funcionalidades a /Emacs/, pero las características que le da *org-mode* a Emacs son tantas que muchas personas se han pasado a /Emacs/ sólo por éste modo. 
+
+En un origen el *org-mode* era un modo que extendía las capacidades de otro modo llamado *outline*. La función de este modo es poder organizar un documento en una estructura jerárquica. Esto es pudiendo tener una estructura de árbol con secciones, subsecciones, etc, y además con la capacidad de colapsar el texto que tenga cada sección o subsección, para así tener de forma sencilla una vista general de todo el documento. 
+
+Esto es de mucha utilidad para hacer una lista de tareas, los capítulos de un libro o un informe, una tesis o tesina, etc, etc.
+
+No hay que olvidar que a pesar de todas las características y cosas que podemos hacer con los documentos creados con el modo *org-mode* que tendrán por defecto la extensión *.org*, éstos siempre tendrán un formato de *texto plano* por lo que aunque muchas de las cosas que veremos solo se pueden hacer en /Emacs/ al menos la apertura y visionado de los documentos *.org* se puede realizar con cualquier programa que visualice ficheros de texto plano sin formato. 
+
+Es por ello que cuando ingresamos en la página del proyecto nos encontramos frases como *Organize your life in plain text* o directamente *Your life in plain text*. 
+
+Y es que una de sus ventajas es que al usar texto plano sin formato que además ocupa poquísimo nos permite ser unos documentos fácilmente compartidos además que por su poco peso podemos enviarlos a otras personas con herramientas muy simples tales como el correo electrónico, ftp, ssh, etc, etc. 
+ 
+** Qué se puede hacer con org-mode
+
+Como ya he comentado en el apartado anterior *Org-mode* estaba muy pensado en principio para poder tener documentos a los cuales se les puede dar una jerarquía con lo que es ideal para hacer una lista de tareas, organizar un proyecto, escribir documentación, libros, etc. Pero además de todo eso posteriormente se han hecho tal cantidad de paquetes extras que además de lo anteriormente dicho nos permite hacer muchísimas otras cosa y utilizar incluso los documentos *.org* como fuente de una base de datos. 
+
+Además la capacidad que tiene *org-mode* de tener un lenguaje de marcado, el cual nos permite escribir documentos muy complejos añadiendo negritas, itálicas, subrayados, así como añadir imágenes, enlaces web, tablas, fórmulas matemáticas y un largo etcétera. 
+
+Aquí enlazo el vídeo de un profesor de universidad que utiliza org-mode para llevar el control de su asignatura.
+
+* Instalando y activando org-mode
+
+Para instalar *org-mode* lo mejor es hacerlo desde el *gestor de paquetes* de /Emacs/, como prácticamente todo, para ello podemos acceder a él desde el menú en *Options* --> *Manage Emacs Packages* o escribiendo en el minibuffer después de pulsar *Alt-x* /list-packages/. Accedemos al listado de paquetes, buscamos con *Ctrl+s* *org* y pulsamos la tecla I. Con esto al principio de la línea donde está el paquete org, aparecerá la letra I, entonces pulsamos *x* y se instalará el paquete. 
+
+Para activar este modo abramos el fichero de configuración *.emacs* con *Ctrl+x Ctrl+f* y escribamos en él lo siguiente:
+
+#+begin_src emacs-lisp :tangle yes
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+#+end_src
+
+Una vez hecho o podemos reiniciar /Emacs/ para que se active la nueva configuración o simplemente y sin necesidad de reiniciar nos vamos al minibuffer con *Atl+x* y escribimos *eval-buffer* y entonces se hará efectiva la configuración que hemos añadido. 
+
+* Llevando las tareas 
+
+Como ya hemos dicho *org-mode* en principio es ideal para llevar un proyecto o hacer una lista de tareas. Comenzaremos con la lista de tareas para que podamos ver el cómo funciona org-mode.
+
+Para empezar empecemos pensando en la lista de la compra por ejemplo:
+
+%imagen aquí%
+
+
+Además podemos cambiar el orden de las cosas e incluso anidar elementos dentro de otros elementos. 
+
+Esto se hace con las teclas:
+
++ Ctrl + intro -> para añadir un nuevo elemento
++ Alt + cursor arriba y abajo -> para cambiar el orden de los elementos.
++ Alt + cursor derecha e izquierda -> para anidar o desanidar elementos. 
+
+% animación aquí %
+
+Aunque veamos que se puede hacer con combinación de teclas no olvidemos que también se puede simplemente añadiendo los asteriscos "a mano" ya que no hay que olvidar que esto es un texto sin formato. 
+
+Con las listas también podemos crear listas de tareas y no solo poder ponerles etiquetas sobre si la tarea está realizada o por hacer o darle prioridad a la tarea en cuestión. 
+
+Para hacer esto con las teclas:
+
++ Shift + flecha arriba o abajo -> Cambiamos la prioridad de la tarea.
++ Shift + flecha derecha o izquierda -> Cambiamos el estado de la tarea. Por defecto será TODO y DONE los estados los estados que podemos elegir. Esto podemos cambiarlo o bien en el fichero de configuración o bien añadiendo una línea en el inicio del documento tal que así:
+
+#+begin_src 
+#+SEQ_TODO: PORHACER, ENPROCESO, HECHO(@) 
+#+end_src
+
+
+
+* Escribiendo texto con org-mode
+
+Con org-mode podemos hacer tareas, listas, artículos, tesis, tesinas, libros, etc.
+
+** Encabezado del texto, secciones, subsecciones
+Podemos organizar las secciones, capítulos, etc con una gran facilidad
+** Marcado del texto
+
+Podemos añadir negritas, cursiva y subrayado
+También podemos crear enlaces a webs y notas al pié de página
+** Añadir fórmulas matemáticas
+
+Usando el lenguaje de marcación de Latex podemos añadir fórmulas matemáticas
+
+
+
+$\frac{1}{2}$
+** Añadir dibujos, imágenes, diagramas...
+Además de añadir imágenes internamente junto con ditaa y plantuml podemos crear
+diagramas y árboles.
+
+Muchos ejemplos los tenemos en esta página:
+
+[[http://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html][Ejemplos con org-mode]]
+
+Por cierto, he encontrado un [[https://github.com/skuro/puml-mode][modo mayor para plantuml]]
+** Exportando a distintos formatos
+* Hojas de calculo
+
+Ver ejemplos propios del Taller
+
+* Creando presentaciones
+Org-mode permite combinarlo con muchas herramientas para crear presentaciones tanto en formato html, pdf o dentro del propio Emacs. 
+Nosotros veremos el ejemplo con _Beamer_
+
+* Haciendo tablas para latex y html
+
+Ver este [[https://www.youtube.com/watch?v=EQAd41VAXWo][*vídeo*]]
+
+* Programación Literal
+

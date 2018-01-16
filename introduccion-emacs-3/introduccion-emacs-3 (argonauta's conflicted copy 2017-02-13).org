@@ -1,0 +1,77 @@
+#+TITLE:Introducción a Emacs (3ª parte)
+#+AUTHOR:Maxxcan
+#+LANGUAGE: es
+#+OPTIONS:   toc:1
+#+TOC: headlines 3
+
+
+* Introducción
+
+Seguimos con la última parte de nuestra introducción a Emacs con algunos pequeños apuntes de cosas que hacer.
+
+* Poniendo temas y cambiando los colores y algunas mejoras en el aspecto
+
+Existen para Emacs gran cantidad de temas que podemos instalar y configurar así como hacer los nuestros propios.
+
+En estas dos páginas nos muestran los temas que hay para Emacs:
+
+[[https://emacsthemes.com/][Emacs Themes]]
+
+[[https://pawelbx.github.io/emacs-theme-gallery/][Emacs theme Gallery]]
+
+
+Además tenemos páginas varias de temas en concreto. Pondré a continuación algunos ejemplos pero ya realizaremos un post en concreto sobre como embellecer nuestro Macis.
+
++ [[https://github.com/owainlewis/emacs-color-themes][Paquete de colores de Emacs]]
++ [[https://github.com/sjrmanning/noctilux-theme][Noctilux]]
++ [[https://github.com/owainlewis/emacs-color-themes][Más temas de Emacs]]
++ [[https://draculatheme.com/emacs/][Dracula para Emacs]]
+
+En todos ellos explican como instalarlos y como activarlos, aunque ya digo que haremos un post donde lo explicaremos mejor y además contaremos el cómo crear nuestro propio tema. 
+
+
+También podemos hacer algunos cambios estéticos más en nuestro editor preferido. 
+
+Algunos de ellos son ocultar la barra de herramientas o incluso la de los menús, esto le da un aspecto más elegante.
+
+Para hacer esto añadiremos en nuestro fichero de configuración los siguiente:
+
+#+begin_src emacs-lisp :tangle yes
+
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+#+end_src
+
+
+* Mirar documentación en inglés y español
+
+Hay mucha documentación de Emacs, tanto en la página de su proyecto como en su wiki. Ambos tienen versión en varios idiomas en los que por supuesto está el español. 
+
+Se pueden encontrar en:
+
++ [[https://www.gnu.org/software/emacs/][Página de Emacs ]]y su [[http://www.nongnu.org/emacs-man-es/#SEC_Top][manual]]
+
++ [[https://www.emacswiki.org/emacs/MapaDelSitio][En el wiki]]. 
+
+En el wiki además tenemos información hacia otras páginas, acceso al IRC de emacs en español y algunas páginas personales muy muy interesantes.
+
+La conocida página *Reddit* tiene una sección solo para Emacs. [[https://www.reddit.com/r/emacs/][Emacs en Reddit]]
+
+* Mirar y/o probar la configuración de otras personas
+
+Otra forma en la que se aprende mucho, pero hay que tener ya algo de experiencia en el uso y la configuración de Emacs, es viendo la configuración de otras personas. 
+
+Por toda la red en páginas como *github*
+
+
+
+* Visitar nuestro canal de IRC y nuestro Planet
+
+Digan lo que digan el protocolo IRC sigue siendo el mejor para mantener a un grupo en contacto. Y esto es porque es un protocolo libre, abierto, muy conocido y muy fácil de implementar. Por eso hay gran cantidad de clientes de irc tanto en modo texto como en modo gráfico y por supuesto para Emacs tenemos el *erc* que viene instalado por defecto. 
+
+Y existe tanto canal de irc en *español* y en inglés. El servidor de acceso es [[https://freenode.net][freenode]] y los canales son o #emacs para la versión inglesa y #emacs-es si quieres español.
+
+También puedes visitar nuestro [[http://planet.emacs-es.org][planet]] donde encontrarás gran cantidad de artículos sobre Emacs en *español*.
+

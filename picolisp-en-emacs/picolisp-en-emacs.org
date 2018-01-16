@@ -1,0 +1,19 @@
+#+TITLE: Picolisp en Emacs
+#+AUTHOR: Patricio Martínez
+#+EMAIL: maxxcan@gmail.com
+
+* Introducción 
+
+A título personal diré que soy una persona que me gusta buscar distintas soluciones a los problemas de siempre. Pienso que a veces hay personas que encuentran una solución completamente distinta a problemas que son solucionados siempre de la misma manera. Por ello, me gusta investigar distintos lenguajes de programación que no son los típicos o más conocidos o usados, y desde que gracias a *Emacs* conocí Elisp y por lo tanto *Lisp* me encantan los lenguajes derivados de éste. 
+
+* Qué es Picolisp 
+
+Picolisp es un lenguaje de programación derivado de Lisp, digamos un dialecto de éste, pero además añade algunas funcionalidades extras como la inclusión de un gestor de bases de datos basado en prolog e interoperabilidad nativa con C y Java. 
+
+* Pequeño tutorial sobre picolisp
+
+* Picolip en Emacs (picolisp-mode)
+
+* Ejecutando Picolisp 
+
+

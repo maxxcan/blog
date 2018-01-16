@@ -1,0 +1,10 @@
+#+TITLE: Emacs-Os
+#+AUTHOR: patricio
+#+EMAIL: patricio@argonauta
+
+
+* Introducción
+  
+* Emacs para todo
+
+* 
