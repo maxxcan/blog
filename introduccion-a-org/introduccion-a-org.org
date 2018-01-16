@@ -1,0 +1,11 @@
+#+TITLE: introduccion-a-org
+#+AUTHOR: Patricio Martínez
+#+DATE: <2018-01-16 mar>
+
+* Introducción
+
+* Qué es org mode
+
+* Qué se puede hacer con org mode
+
+
