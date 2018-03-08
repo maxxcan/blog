@@ -4,8 +4,12 @@
 
 * Introducción
 
-* Qué es org mode
+Le he dado muchas vueltas a cómo hacer una introducción a Org mode, es por lo que he tardado tanto en hacer este artículo. De hecho, ya tenía un artículo empezado pero al final no me convencía y he intentado una aproximación distinta y dicho sea de paso, guiada gracias a un muy buen artículo que he encontrado. 
 
-* Qué se puede hacer con org mode
+En ese artículo el autor nos comenta que ha vuelto a Emacs después de 10 años de ser usuario de Vim principalmente por Org mode. Así que basándome en ese artículo, el cual por supuesto dejaré el enlace para el que quiera leerlo haré yo éste bien porque añado algunas cosas de mi cosecha, bien por tener una introducción en español. 
 
+* Qué es Org mode 
 
+* Org mode y métodos productivos 
+
+*  
