@@ -1,0 +1,13 @@
+#+TITLE: playmouth-archlinux
+#+AUTHOR: Maxxcan Fox
+#+DATE: <2020-04-22 mié>
+
+* Introducción
+
+* Instalar playmouth 
+
+Instalarlo y modificar el archivo mkcpio.conf
+
+* Modificar el grub 
+
+Modificar el fichero /etc/default/grub y ejecutar grub-mkconfig -o 

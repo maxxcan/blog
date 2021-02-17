@@ -1,0 +1,13 @@
+#+title: Introducción a org-static-blog
+#+date: <2021-01-27 18:09>
+#+filetags: computers emacs blog 
+
+* Introducción
+
+* Instalación
+
+* Configuración
+
+* Uso
+
+* Conclusiones

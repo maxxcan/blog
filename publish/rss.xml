@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title><![CDATA[My Static Org Blog]]></title>
+<description><![CDATA[My Static Org Blog]]></description>
+<link>https://www.maxxcan.com/</link>
+<lastBuildDate>mié, 27 ene 2021 18:27:51 +0100</lastBuildDate>
+<item>
+  <title><![CDATA[Presentación del Blog]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-org519e6a7" class="outline-2">
+<h2 id="org519e6a7">Introducción</h2>
+</div>
+
+<div id="outline-container-org52ca697" class="outline-2">
+<h2 id="org52ca697"></h2>
+</div>
+<div class="taglist"><a href="https://www.maxxcan.com/tags.html">Tags</a>: <a href="https://www.maxxcan.com/tag-computer.html">computer</a> <a href="https://www.maxxcan.com/tag-blog.html">blog</a> <a href="https://www.maxxcan.com/tag-biology.html">biology</a> <a href="https://www.maxxcan.com/tag-programming.html">programming</a> </div>]]></description>
+  <category><![CDATA[computer]]></category>
+  <category><![CDATA[blog]]></category>
+  <category><![CDATA[biology]]></category>
+  <category><![CDATA[programming]]></category>
+  <link>https://www.maxxcan.com/2021-01-27-presentación-del-blog.html</link>
+  <pubDate>mié, 27 ene 2021 18:22:00 +0100</pubDate>
+</item>
+<item>
+  <title><![CDATA[Introducción a org-static-blog]]></title>
+  <description><![CDATA[
+
+<div id="outline-container-org8367549" class="outline-2">
+<h2 id="org8367549">Introducción</h2>
+</div>
+
+<div id="outline-container-orgc07f952" class="outline-2">
+<h2 id="orgc07f952">Instalación</h2>
+</div>
+
+<div id="outline-container-orge7a35b8" class="outline-2">
+<h2 id="orge7a35b8">Configuración</h2>
+</div>
+
+<div id="outline-container-org600a3d3" class="outline-2">
+<h2 id="org600a3d3">Uso</h2>
+</div>
+
+<div id="outline-container-orgdd2b2e5" class="outline-2">
+<h2 id="orgdd2b2e5">Conclusiones</h2>
+</div>
+<div class="taglist"><a href="https://www.maxxcan.com/tags.html">Tags</a>: <a href="https://www.maxxcan.com/tag-computers.html">computers</a> <a href="https://www.maxxcan.com/tag-emacs.html">emacs</a> <a href="https://www.maxxcan.com/tag-blog.html">blog</a> </div>]]></description>
+  <category><![CDATA[computers]]></category>
+  <category><![CDATA[emacs]]></category>
+  <category><![CDATA[blog]]></category>
+  <link>https://www.maxxcan.com/2021-01-27-introducción-a-org-static-blog.html</link>
+  <pubDate>mié, 27 ene 2021 18:09:00 +0100</pubDate>
+</item>
+</channel>
+</rss>
